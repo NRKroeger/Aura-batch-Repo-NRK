@@ -1,0 +1,24 @@
+<aura:component controller="AuraAccHelp"  access="global" implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+	<aura:attribute name="accountList" type="Account[]" />
+	<aura:attribute name="columns" type="List" />
+	
+     
+     <aura:handler name="init" value="{!this}" action="{!c.myAction}" />
+	
+    	<lightning:datatable data="{! v.accountList }" 
+                             columns="{! v.columns }" 
+                             keyField="id" 
+                             hideCheckboxColumn="true"/>
+	
+     <lightning:recordEditForm objectApiName='Account' onsuccess='{!c.myAction}'>
+        <lightning:inputfield fieldName='Name'/>
+        <lightning:inputfield fieldName='Industry'/>
+        <lightning:inputfield fieldName='AnnualRevenue'/>
+        <lightning:button variant="brand" label='create new account' type='submit' title='newbutt' />
+    </lightning:recordEditForm>
+    
+    <!--
+implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+
+-->
+</aura:component>

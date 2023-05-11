@@ -1,0 +1,4 @@
+<aura:component access="global" implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+	<c:AccountView/>
+    <c:AccountCreate/>
+</aura:component>
